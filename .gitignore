@@ -1,0 +1,17 @@
+stands_app
+*.o
+*.a
+*.so
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Salida de ejecución
+*.out

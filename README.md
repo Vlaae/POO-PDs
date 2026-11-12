@@ -9,7 +9,7 @@ Calculadora de escritorio en Java construida con el patrón **Modelo-Vista-Contr
 
 ## Video explicativo
 
-**[Ver video](PEGAR_AQUI_EL_ENLACE_DEL_VIDEO)**
+**[Ver video](https://youtu.be/NZYigpsjIEA)**
 
 
 ## Resumen de la propuesta implementada

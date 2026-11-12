@@ -1,0 +1,51 @@
+## Diagrama actual
+
+```mermaid
+classDiagram
+    class Operacion {
+        <<enumeration>>
+        SUMAR
+        RESTAR
+        MULTIPLICAR
+        DIVIDIR
+        -String etiqueta
+        -BinaryOperator~BigDecimal~ funcion
+        +aplicar(BigDecimal a, BigDecimal b) BigDecimal
+        +etiqueta() String
+    }
+    class ModeloCalculadora {
+        -BigDecimal resultadoActual
+        +reiniciar() void
+        +aplicar(Operacion op, String numero) void
+        +obtenerValor() String
+    }
+    class VistaCalculadora {
+        -JTextField cajaEntrada
+        -JTextField cajaResultado
+        -Map~Operacion, JButton~ botonesOperacion
+        -JButton botonLimpiar
+        +obtenerTextoEntrada() String
+        +actualizarResultado(String) void
+        +mostrarError(String) void
+        +escucharOperacion(Operacion, ActionListener) void
+        +escucharLimpiar(ActionListener) void
+    }
+    class ControladorCalculadora {
+        -ModeloCalculadora modelo
+        -VistaCalculadora vista
+    }
+    class EventoOperacion {
+        -Operacion operacion
+        +actionPerformed(ActionEvent) void
+    }
+    class EventoLimpiar {
+        +actionPerformed(ActionEvent) void
+    }
+    ControladorCalculadora *-- EventoOperacion : una por operación
+    ControladorCalculadora *-- EventoLimpiar
+    ControladorCalculadora --> ModeloCalculadora
+    ControladorCalculadora --> VistaCalculadora
+    ModeloCalculadora --> Operacion : delega el cálculo
+    VistaCalculadora ..> Operacion : genera un botón por cada valor
+    EventoOperacion --> Operacion
+```

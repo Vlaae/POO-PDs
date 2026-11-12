@@ -1,4 +1,4 @@
-## Diagrama actual
+## 2.2 Diagrama actual
 
 ```mermaid
 classDiagram
